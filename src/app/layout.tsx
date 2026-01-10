@@ -8,8 +8,40 @@ import Footer from "@/components/Layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sandaru Suranjaya Photography",
-  description: "A serverless photography portfolio.",
+  title: {
+    default: "Sandaru Suranjaya | Photography Portfolio",
+    template: "%s | Sandaru Suranjaya",
+  },
+  description: "A visual journal of moments, places, and faces by Sandaru Suranjaya. Explore a curated collection of photography capturing the beauty of the world.",
+  keywords: ["photography", "portfolio", "travel", "portrait", "sandaru suranjaya", "photographer"],
+  authors: [{ name: "Sandaru Suranjaya", url: "https://sandaru.me" }],
+  creator: "Sandaru Suranjaya",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://sandaru.me",
+    title: "Sandaru Suranjaya | Photography Portfolio",
+    description: "Explore the visual journal of Sandaru Suranjaya. A serverless photography portfolio capturing moments in time.",
+    siteName: "Sandaru Suranjaya Photography",
+    images: [
+      {
+        url: "/og-image.jpg", // Ideally this would be a dynamic OG image or a static one we need to add, but for now we'll define the structure.
+        width: 1200,
+        height: 630,
+        alt: "Sandaru Suranjaya Photography",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sandaru Suranjaya | Photography Portfolio",
+    description: "A visual journal of moments, places, and faces by Sandaru Suranjaya.",
+    images: ["/og-image.jpg"],
+    creator: "@sandarusuranjaya", // Guessed from youtube handle, can be corrected
+  },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
