@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Serverless Photography Portfolio
 
-## Getting Started
+## Architecture Overview
+- **Philosophy**: "Headless" Content Management. You manage assets on a third-party platform (Cloudinary), and the website simply pulls and displays them.
+- **Frontend**: Next.js (App Router). Chosen for its ability to hide API keys server-side and its superior image optimization features.
+- **Backend/CMS**: Cloudinary Media Console. (No custom backend code required).
+- **Database**: None. (Data is derived directly from file metadata).
+- **Hosting**: Vercel (Zero-configuration deployment for Next.js).
+- **Contact Form**: Formspree or EmailJS (API-based email handling).
 
-First, run the development server:
+## Tech Stack
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **State Management**: React Query (TanStack Query)
+- **Icons**: Lucide React or React Icons
+
+## Feature Highlights
+- **Masonry Grid**: Responsive grid for mixed aspect ratios.
+- **Infinite Scroll**: Fetches new images as you scroll.
+- **Performance**: Server-side initial fetch, blur placeholders, auto webp/avif.
+- **Lightbox**: Modal view with backdrop blur.
+
+## Setup & Configuration
+
+### 1. Cloudinary Setup
+1. Create a Cloudinary account.
+2. Create a folder named `portfolio-live`. Only images in this folder will be shown.
+3. Configure **Upload Preset**:
+    - Max width: 2500px (or similar web-friendly size).
+    - Strip GPS data.
+4. **Ordering**: Rename files `001_hero.jpg`, `002_portrait.jpg`, etc., to control sort order.
+
+### 2. Environment Variables
+Create a `.env.local` file with the following:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/yourhandle
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret # (Keep this private!)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Development
+```bash
+npm install
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Logic
+The internal API route `/api/photos` acts as a secure bridge.
+1. Frontend requests `/api/photos?cursor=XYZ`.
+2. Server uses `cloudinary` SDK with Secret Key to fetch images from `portfolio-live`.
+3. Returns JSON list of image URLs and `next_cursor`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Roadmap
+- [ ] **Phase 1**: Setup Cloudinary & Next.js.
+- [ ] **Phase 2**: Connect Data (API Route).
+- [ ] **Phase 3**: Build UI (Masonry Grid, Infinite Scroll).
+- [ ] **Phase 4**: Optimization (Lightbox, Contact Form, Deploy).
