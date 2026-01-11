@@ -17,7 +17,7 @@ const fetchImages = async ({ pageParam }: { pageParam?: string }) => {
 };
 
 export default function MasonryGrid({ initialData }: { initialData?: CloudinaryResponse }) {
-    const [selectedImage, setSelectedImage] = useState<CloudinaryImage | null>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number>(-1);
     const { ref, inView } = useInView();
 
     const {
@@ -48,11 +48,12 @@ export default function MasonryGrid({ initialData }: { initialData?: CloudinaryR
         <div className="w-full">
             {/* CSS Masonry Columns */}
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                {allImages.map((image) => (
+                {allImages.map((image, index) => (
                     <ImageCard
                         key={image.public_id}
                         image={image}
-                        onClick={() => setSelectedImage(image)}
+                        onClick={() => setSelectedIndex(index)}
+                        priority={index < 6}
                     />
                 ))}
             </div>
@@ -72,8 +73,12 @@ export default function MasonryGrid({ initialData }: { initialData?: CloudinaryR
             </div>
 
             <Lightbox
-                image={selectedImage}
-                onClose={() => setSelectedImage(null)}
+                image={selectedIndex >= 0 ? allImages[selectedIndex] : null}
+                onClose={() => setSelectedIndex(-1)}
+                onNext={() => setSelectedIndex((prev) => Math.min(prev + 1, allImages.length - 1))}
+                onPrev={() => setSelectedIndex((prev) => Math.max(prev - 1, 0))}
+                hasNext={selectedIndex < allImages.length - 1}
+                hasPrev={selectedIndex > 0}
             />
         </div>
     );

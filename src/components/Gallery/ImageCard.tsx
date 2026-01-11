@@ -6,9 +6,10 @@ import { CloudinaryImage } from '@/types/cloudinary';
 interface ImageCardProps {
     image: CloudinaryImage;
     onClick?: () => void;
+    priority?: boolean;
 }
 
-export default function ImageCard({ image, onClick }: ImageCardProps) {
+export default function ImageCard({ image, onClick, priority = false }: ImageCardProps) {
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dah43wh2z';
 
     // Construct a tiny blur placeholder URL
@@ -30,6 +31,7 @@ export default function ImageCard({ image, onClick }: ImageCardProps) {
                     placeholder="blur"
                     blurDataURL={blurUrl}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={priority}
                 />
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
