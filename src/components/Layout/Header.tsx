@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaTiktok, FaGlobe } from "react-icons/fa";
 
 export default function Header() {
     const pathname = usePathname();
@@ -66,6 +66,21 @@ export default function Header() {
                 <div className={`w-px bg-gray-300/50 dark:bg-gray-700/50 mx-1 md:mx-2 transition-all duration-300 ${isScrolled ? 'h-3 md:h-4' : 'h-4 md:h-5'}`} />
 
                 <div className="flex items-center gap-1 md:gap-2">
+                    <Link
+                        href="https://sandaru.me"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`
+                            text-gray-600 dark:text-gray-400 
+                            hover:text-black dark:hover:text-white 
+                            hover:bg-white/50 dark:hover:bg-white/10 
+                            rounded-full transition-all duration-300
+                            ${isScrolled ? 'p-2 md:p-2' : 'p-2 md:p-3'}
+                        `}
+                        aria-label="Main Website"
+                    >
+                        <FaGlobe size={18} className={`transition-all duration-300 ${isScrolled ? 'md:w-4 md:h-4' : 'md:w-5 md:h-5'}`} />
+                    </Link>
                     <Link
                         href="https://www.instagram.com/sandarugraphy/"
                         target="_blank"
