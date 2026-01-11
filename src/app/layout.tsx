@@ -55,7 +55,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white transition-colors duration-300`}>
         <Providers>
           <Header />
-          <main className="flex-grow pt-20 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto w-full">
+          <main className="flex-grow pt-48 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto w-full">
             {children}
           </main>
           <Footer />
