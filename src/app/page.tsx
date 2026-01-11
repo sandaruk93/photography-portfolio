@@ -9,8 +9,8 @@ export default async function Home() {
   return (
     <>
       <div className="mb-12 animate-fade-in-up">
-        <h1 className="text-4xl font-light tracking-tight text-gray-900 mb-4">Sandaru Suranjaya Photography</h1>
-        <p className="text-gray-500 font-light max-w-lg">
+        <h1 className="text-4xl font-light tracking-tight text-gray-900 dark:text-gray-100 mb-4">Sandaru Suranjaya Photography</h1>
+        <p className="text-gray-500 dark:text-gray-400 font-light max-w-lg">
           A visual journal of places, faces, and moments frozen in time.
         </p>
       </div>
