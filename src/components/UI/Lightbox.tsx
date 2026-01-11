@@ -28,7 +28,7 @@ export default function Lightbox({ image, onClose }: LightboxProps) {
 
     return (
         <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-white/95 backdrop-blur-xl animate-in fade-in duration-300"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-300"
             onClick={onClose}
         >
             <button
@@ -55,9 +55,9 @@ export default function Lightbox({ image, onClose }: LightboxProps) {
                 </div>
             </div>
 
-            <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none">
-                <p className="text-xs font-mono tracking-widest text-gray-400">
-                    {image.display_name?.replace(/[_-]/g, ' ') || 'UNTITLED'}
+            <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none px-4">
+                <p className="text-sm font-medium tracking-wide text-white/90 drop-shadow-md">
+                    {image.context?.custom?.caption || image.context?.custom?.title || image.display_name?.replace(/[_-]/g, ' ') || 'Untitled'}
                 </p>
             </div>
         </div>

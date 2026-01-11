@@ -12,7 +12,8 @@ export const getPhotos = async (cursor?: string): Promise<CloudinaryResponse> =>
         const search = cloudinary.search
             .expression('folder:portfolio-live')
             .sort_by('public_id', 'desc')
-            .max_results(12);
+            .max_results(12)
+            .with_field('context');
 
         if (cursor) {
             search.next_cursor(cursor);

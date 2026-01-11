@@ -8,6 +8,13 @@ export interface CloudinaryImage {
     secure_url: string;
     display_name?: string;
     created_at: string;
+    context?: {
+        custom?: {
+            caption?: string;
+            title?: string;
+            alt?: string;
+        }
+    };
 }
 
 export interface CloudinaryResponse {
