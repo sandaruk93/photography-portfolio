@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Contact() {
     return (
         <div className="max-w-2xl mx-auto py-12 animate-fade-in-up">
-            <h1 className="text-4xl font-light text-center mb-8 dark:text-white">Get in Touch</h1>
+            <h1 className="text-4xl font-bold text-center mb-8 dark:text-white">Get in Touch</h1>
             <p className="text-gray-500 dark:text-gray-400 text-center mb-12 font-light">
                 Interested in collaborations, prints, or just want to say hello? <br className="hidden sm:block" />
                 Fill out the form below and I will get back to you as soon as possible.
