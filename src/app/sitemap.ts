@@ -1,19 +1,19 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://sandaru.me'; // Assuming this domain based on footer linkage
+    const baseUrl = 'https://photography.sandaru.me';
 
     return [
         {
             url: baseUrl,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 1,
         },
         {
             url: `${baseUrl}/contact`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.8,
         },
     ];

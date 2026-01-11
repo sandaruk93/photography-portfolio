@@ -5,24 +5,25 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://photography.sandaru.me'),
   title: {
-    default: "Sandaru Suranjaya | Photography Portfolio",
+    default: "Sandaru Suranjaya | Portfolio & Photography Singapore",
     template: "%s | Sandaru Suranjaya",
   },
-  description: "A visual journal of moments, places, and faces by Sandaru Suranjaya. Explore a curated collection of photography capturing the beauty of the world.",
-  keywords: ["photography", "portfolio", "travel", "portrait", "sandaru suranjaya", "photographer"],
-  authors: [{ name: "Sandaru Suranjaya", url: "https://sandaru.me" }],
+  description: "Hobbyist photographer in Singapore sharing a curated gallery of street, urban, architecture, nature, landscape, and macro photography.",
+  keywords: ["Photographer Singapore", "Sandaru Suranjaya", "Singapore Photography", "Street Photography", "Urban Photography", "Architecture Photography", "Nature Photography", "Landscape Photography", "Macro Photography"],
+  authors: [{ name: "Sandaru Suranjaya", url: "https://photography.sandaru.me" }],
   creator: "Sandaru Suranjaya",
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://sandaru.me",
-    title: "Sandaru Suranjaya | Photography Portfolio",
-    description: "Explore the visual journal of Sandaru Suranjaya. A serverless photography portfolio capturing moments in time.",
-    siteName: "Sandaru Suranjaya Photography",
+    title: 'Sandaru Suranjaya | Portfolio & Photography Singapore',
+    description: 'Curated gallery of street, urban, architecture, nature, landscape, and macro photography by Sandaru Suranjaya in Singapore.',
+    url: 'https://photography.sandaru.me',
+    siteName: 'Sandaru Suranjaya Photography',
+    locale: 'en_SG',
+    type: 'website',
     images: [
       {
-        url: "/og-image.jpg", // Ideally this would be a dynamic OG image or a static one we need to add, but for now we'll define the structure.
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Sandaru Suranjaya Photography",
@@ -31,10 +32,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sandaru Suranjaya | Photography Portfolio",
-    description: "A visual journal of moments, places, and faces by Sandaru Suranjaya.",
+    title: "Sandaru Suranjaya | Portfolio & Photography Singapore",
+    description: "Professional photography portfolio of Sandaru Suranjaya based in Singapore.",
     images: ["/og-image.jpg"],
-    creator: "@sandarusuranjaya", // Guessed from youtube handle, can be corrected
+    creator: "@sandarusuranjaya",
   },
   icons: {
     icon: "/icon.svg",
