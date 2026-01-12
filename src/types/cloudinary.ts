@@ -9,7 +9,11 @@ export interface CloudinaryImage {
     display_name?: string;
     created_at: string;
     context?: {
-        [key: string]: string;
+        custom?: {
+            alt?: string;
+            caption?: string;
+        };
+        [key: string]: any;
     };
 }
 

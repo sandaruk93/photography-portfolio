@@ -7,6 +7,8 @@ export default function Footer() {
                 </p>
                 <a
                     href="https://sandaru.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                 >
                     Go to sandaru.me →

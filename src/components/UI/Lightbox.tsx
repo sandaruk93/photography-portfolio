@@ -87,7 +87,7 @@ export default function Lightbox({ image, onClose, onNext, onPrev, hasNext, hasP
 
             <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none px-4">
                 <p className="text-sm font-medium tracking-wide text-white/90 drop-shadow-md">
-                    {image.context?.caption || image.context?.title || image.context?.alt || image.display_name?.replace(/[_-]/g, ' ') || 'Untitled'}
+                    {image.context?.custom?.caption || image.context?.custom?.alt || image.context?.caption || image.context?.title || image.context?.alt || image.display_name?.replace(/[_-]/g, ' ') || 'Untitled'}
                 </p>
             </div>
         </div>

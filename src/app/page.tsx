@@ -18,14 +18,7 @@ export default async function Home() {
             Please enjoy this collection of my personal work and artistic projects.
           </p>
         </div>
-        <a
-          href="https://sandaru.me"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-        >
-          Visit sandaru.me <span className="ml-1">↗</span>
-        </a>
+
       </div>
 
       <MasonryGrid initialData={initialData} />

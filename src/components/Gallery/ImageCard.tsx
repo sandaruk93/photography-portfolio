@@ -24,7 +24,7 @@ export default function ImageCard({ image, onClick, priority = false }: ImageCar
             <div className="relative overflow-hidden rounded-sm bg-gray-100">
                 <Image
                     src={image.secure_url}
-                    alt={image.display_name || image.public_id}
+                    alt={image.context?.custom?.alt || image.context?.custom?.caption || image.display_name || image.public_id}
                     width={image.width}
                     height={image.height}
                     className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
